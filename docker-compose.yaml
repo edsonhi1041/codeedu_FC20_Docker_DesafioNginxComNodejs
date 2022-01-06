@@ -17,11 +17,11 @@ services:
         build:
             context: node
         container_name: app
-        entrypoint: dockerize -wait tcp://db:3306 -timeout 20s npm start
+        entrypoint: dockerize -wait tcp://db:3306 -timeout 120s npm start
         networks:
             - node-network
-#        volumes:
-#            - ./node/my_app:/usr/src/app
+##        volumes:
+##            - ./node/my_app:/usr/src/app
         tty: true
         ports:
             - "3000:3000"
@@ -34,7 +34,8 @@ services:
         restart: always
         tty: true
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./db:/docker-entrypoint-initdb.d
+#            - ./mysql:/var/lib/mysql
         environment:
             - MYSQL_DATABASE=nodedb
             - MYSQL_ROOT_PASSWORD=root

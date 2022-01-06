@@ -1,4 +1,5 @@
 # codeedu_FC20_Docker_DesafioNginxComNodejs
+[Revisão] Criacao automatica de tabelas do MySQL faltantes
 [Revisão] Acrescentado 'dockerize' para aguardar ativação do DB MYSQL
 
 # Desafio nginx com nodejs
